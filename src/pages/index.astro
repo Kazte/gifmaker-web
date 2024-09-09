@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { buttonVariants } from '@/components/ui/button'
+import { ArrowRight } from 'lucide-astro'
+---
+
+<BaseLayout
+  title='gifmaker'
+  description='This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI.'
+>
+  <section class='w-full py-20 text-foreground'>
+    <div class='container grid items-center gap-8 px-4 md:grid-cols-2 md:px-6'>
+      <div class='space-y-4'>
+        <h1 class='text-4xl font-bold tracking-tight'>
+          Convert Videos to GIFs like never before
+        </h1>
+        <p class='text-lg text-foreground/80'>
+          A video-to-GIF converter makes it simple to create shareable GIFs from
+          your favorite videos. Convert videos to GIFs in just a few clicks.
+        </p>
+        <a
+          href='https://github.com/kazte/gifmaker-tauri/releases/latest'
+          target='_blank'
+          rel='noreferrer'
+          class={buttonVariants()}
+        >
+          Try It Now
+          <ArrowRight class='ml-2 size-4' />
+        </a>
+      </div>
+      <img
+        src='/demo.jpeg'
+        width='668'
+        height='501'
+        alt='Hero'
+        class='mx-auto rounded-lg shadow-xl'
+        style={{ aspectRatio: '668/501  ', objectFit: 'cover' }}
+      />
+    </div>
+  </section>
+</BaseLayout>

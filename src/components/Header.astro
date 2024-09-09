@@ -2,13 +2,14 @@
 import { buttonVariants } from '@/components/ui/button'
 import ThemeToggle from '@/components/ThemeToggle.astro'
 import { Github, Download } from 'lucide-astro'
+import { cn } from '@/lib/utils'
 ---
 
 <header
   class='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'
 >
   <div
-    class='container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0  mx-auto'
+    class='container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0  mx-auto px-2'
   >
     <div class='flex gap-6 md:gap-10'>
       <a href='/' class='flex items-center space-x-2'>
@@ -29,7 +30,10 @@ import { Github, Download } from 'lucide-astro'
           href='https://github.com/kazte/gifmaker-tauri'
           target='_blank'
           rel='noreferrer'
-          class={buttonVariants({ variant: 'ghost' })}
+          class={cn(
+            buttonVariants({ variant: 'highlight' }),
+            'hidden md:inline-flex' 
+          )}
         >
           <Github class='mr-2 h-4 w-4' /> Github
         </a>
